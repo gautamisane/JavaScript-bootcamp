@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking Details</title>
+    <style>
+        div#maincontent {
+            height: 200px;
+            width: 600px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #08438E;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+
+        div#heading {
+            text-decoration: bold;
+            text-align: center;
+            margin-top: 80px;
+            width: 600px;
+            border: 1px solid #CEE2FA;
+            text-align: center;
+            color: #08438E;
+            background-color: #CEE2FA;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+
+        h4 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="heading">
+        <b>Theatre Drama</b>
+    </div>
+    <div id="maincontent">
+        <h4>Your Ticket Details:</h4>
+        <br>
+        <script>
+
+            let seats = prompt('Enter seats');
+            let amount = seats * 9;
+            var discountTiers = [5, 7, 9, 11];
+            // or increment by 2 
+
+            var customer = 0;
+
+            if (seats <= 2) {
+                document.write(`For ${seats} tickets, you need to pay: $${amount}`)
+            }
+
+            if (seats >= 6) {
+                alert('Not allowed');
+            }
+
+            if (seats > 2 && seats < 5) {
+                // 3 and 4
+                let discountForAll = [];
+                let discountPercent = 5;
+                newDisc = [];
+                totalAmount = 0;
+
+                //everything dependent on no. of seats
+
+                for (let loopVar = 0; loopVar < seats; loopVar++) { // 0 1 2 
+
+                    discountForAll[loopVar] = 9 - (discountTiers[loopVar] / 100) * 9; //directly storing in array
+                    totalAmount += discountForAll[loopVar];
+                    newDisc.push(9 - (discountTiers[loopVar] / 100) * 9); //pushing the values in array
+                    customer++;
+                    document.write("Ticket for customer " + customer + " gets " + discountTiers[loopVar] + "%   test>" + discountPercent + "discount " + "Cost is: $" + discountForAll[loopVar] + " " + newDisc[loopVar]);
+                    document.write("<br/>");
+
+                    discountPercent += 2;
+                }
+
+                document.write(`For ${seats} tickets, you need to pay: $${totalAmount} instead of $${amount}`);
+
+                //document.write(newDisc);
+
+
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>
+
+<!-- discountFor5 = 9 - (discountTiers[0] / 100) * 9;
+discountFor7 = 9 - (discountTiers[1] / 100) * 9;
+discountFor9 = 9 - (discountTiers[2] / 100) * 9;
+discountFor11 = 9 - (discountTiers[3] / 100) * 9; -->
+
+<!-- for(i=0;i<seats;i++){ 3 -- 0 1 2
+    discAll[i] = 9 - (discountTiers[i] / 100) * 9;
+} -->
+
+
+<!-- for (let disc = 0; disc < seats; disc++) {
+    discountForAll[disc] = 9 - (discountTiers[disc] / 100) * 9;
+    //document.write(discountForAll);
+} -->

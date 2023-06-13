@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking Summary</title>
+    <style>
+        div#maincontent {
+            height: 250px;
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #08438E;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+
+        div#heading {
+            text-decoration: bold;
+            text-align: center;
+            margin-top: 80px;
+            width: 500px;
+            border: 1px solid #CEE2FA;
+            text-align: center;
+            color: #08438E;
+            background-color: #CEE2FA;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div id="heading">
+        <h2>Booking Summary</h2>
+    </div>
+    <div id="maincontent">
+        <script>
+
+            //Write the code to display the booking summary
+            let seats = prompt('Enter number of seats');
+            document.write('Actual cose per ticket: $9');
+            document.write('<br>');
+            amount = seats * 9;
+            calculateCost(seats);
+
+            //document.write('amount payable:' + storeAmt);
+
+
+            function calculateCost(seats) {
+                if (seats <= 2) {
+                    document.write('Amount payable $' + amount);
+                }
+
+                else if (seats >= 6) {
+                    document.write("Not available!!");
+                }
+
+                else if (seats > 2 && seats < 5) {
+                    document.write(`${seats} seats are eligible for discount`);
+                    calculateDiscount(seats);
+
+                }
+
+
+                function calculateDiscount(seats) {
+
+                    let counter = 0;
+                    let discounts = 5;
+                    discountForAll = [];
+                    totalDiscount = 0;
+
+                    for (let i = 0; i < seats; i++) { // 0 1 2 3
+                        discountForAll[i] = 9 - (discounts / 100) * 9;
+                        totalDiscount += discountForAll[i];
+                        document.write('<br>');
+                        counter++; // 1 2 3 4
+                        document.write(`${discounts}% discount! on Ticket ${counter} `);
+                        discounts += 2;
+
+                    }
+                    document.write('<br>');
+                    return (document.write(`Amount payable: $${totalDiscount}`))
+
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </div>
+
+</body>
+ 
+
+</html>

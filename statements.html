@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking Details</title>
+    <style>
+        div#maincontent {
+            height: 200px;
+            width: 600px;
+            border: 1px solid #CEE2FA;
+            text-align: left;
+            color: #08438E;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+
+        div#heading {
+            text-decoration: bold;
+            text-align: center;
+            margin-top: 80px;
+            width: 600px;
+            border: 1px solid #CEE2FA;
+            text-align: center;
+            color: #08438E;
+            background-color: #CEE2FA;
+            font-family: calibri;
+            font-size: 20;
+            padding: 5px;
+        }
+
+        h4 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="heading">
+        <b>Theatre Drama</b>
+    </div>
+    <div id="maincontent">
+        <h4>Your Ticket Details:</h4>
+        <br>
+        <script>
+
+
+
+            // Write the code to display the total price and discounted price of tickets
+
+            let seats = prompt('Enter seats');
+            let amount = seats * 9;
+
+            if (seats <= 2) {
+                document.write(`For ${seats} tickets, you need to pay: $${amount}`)
+            }
+
+            if (seats >= 5) {
+                alert('Not allowed');
+            }
+
+            // 3 , 4 
+
+            switch (seats) {
+                case "3":
+                    let discount = (5 / 100) * 9;
+                    let discountedPrice = 9 - discount;
+                    document.write('Ticket for Customer 1 gets 5% discount, Cost is: $' + discountedPrice);
+                    document.write('<br>')
+
+                    discount = (7 / 100) * 9;
+                    let discountedPrice2 = 9 - discount;
+                    document.write('Ticket for Customer 2 gets 7% discount, Cost is: $' + discountedPrice2);
+                    document.write('<br>')
+
+                    discount = (9 / 100) * 9;
+                    let discountedPrice3 = 9 - discount;
+                    document.write('Ticket for Customer 3 gets 9% discount, Cost is: $' + discountedPrice3);
+                    document.write('<br>')
+
+                    document.write(`For 3 seats, you need to pay: $${discountedPrice + discountedPrice2 + discountedPrice3} instead of $${amount}`)
+                    break;
+
+
+
+
+                case "4":
+                    let discountFour = (5 / 100) * 9;
+                    let discountedPriceFour = 9 - discountFour;
+                    document.write('Ticket for Customer 1 gets 5% discount, Cost is:' + discountedPriceFour);
+                    document.write('<br>')
+
+                    discountFour = (7 / 100) * 9;
+                    discountedPriceFour = 9 - discountFour;
+                    document.write('Ticket for Customer 2 gets 7% discount, Cost is:' + discountedPriceFour);
+                    document.write('<br>')
+
+                    discountFour = (9 / 100) * 9;
+                    discountedPriceFour = 9 - discountFour;
+                    document.write('Ticket for Customer 3 gets 9% discount, Cost is:' + discountedPriceFour);
+                    document.write('<br>')
+
+                    discountFour = (11 / 100) * 9;
+                    discountedPriceFour = 9 - discountFour;
+                    document.write('Ticket for Customer 4 gets 11% discount, Cost is:' + discountedPriceFour);
+                    document.write('<br>')
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>
